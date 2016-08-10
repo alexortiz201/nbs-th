@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.1/d3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="config.js"></script>
+    <script src="common/services/api.service.js"></script>
+    <script src="components/nbs-search/nbs-search.directive.js"></script>
+    <script src="components/nbs-graph/nbs-graph.directive.js"></script>
+    <script src="pages/main/main.controller.js"></script>
+  </head>
+  <body ng-app="main">
+    <main
+      class="main"
+      ng-controller="MainController as main">
+      <nbs-search
+        entity-name="main.artistName"
+        search-fn="main.search(main.artistName)"
+        ></nbs-search>
+      <nbs-graph
+        entity-name="main.artistName"
+        search-results="main.searchResults"
+        ></nbs-graph>
+    </div>
+  </body>
+</html>

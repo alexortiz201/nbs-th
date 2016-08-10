@@ -1,0 +1,23 @@
+{
+  "name": "nbs_assigment",
+  "version": "1.0.0",
+  "description": "nsb Assigment using ng and d3",
+  "main": "pages/main/main.controller.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexortiz201/nbs-th.git"
+  },
+  "author": "ao",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/alexortiz201/nbs-th/issues"
+  },
+  "homepage": "https://github.com/alexortiz201/nbs-th#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "d3": "^4.2.1"
+  }
+}
