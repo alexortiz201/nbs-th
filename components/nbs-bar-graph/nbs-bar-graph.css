@@ -1,3 +1,7 @@
+.nbs-bar-graph-label {
+  text-transform: capitalize;
+}
+
 .nbs-bar-graph {
     background: #eee;
     padding: 3px;
