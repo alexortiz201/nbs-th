@@ -8,12 +8,7 @@ angular.module('nbsSearch', [])
 
     return {
       restrict: 'E',
-      template: `<div class="search-container">
-          <label>Name:</label>
-          <input type="text" ng-model="ctrl.entityName" placeholder="Enter a name here" />
-          <button ng-click="ctrl.searchClicked()">Search</button>
-          <hr>
-        </div>`,
+      templateUrl: 'components/nbs-search/nbs-search.html',
       scope: {
         entityName: '=',
         searchFn: '&'

@@ -4,6 +4,7 @@
   "description": "nsb Assigment using ng and d3",
   "main": "pages/main/main.controller.js",
   "scripts": {
+    "start": "python -m SimpleHTTPServer",
     "test": "test"
   },
   "repository": {
