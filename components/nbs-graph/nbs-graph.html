@@ -1,12 +1,14 @@
-<div>
-  <h1>"{{ctrl.entityName}}"!</h1>
-  <div class="results" 
-    ng-if="ctrl.searchResults.length >= 1">
-    <ul class="result-items">
-    <li
-      class="result"
-      ng-repeat="result in ctrl.searchResults">
-      {{result.name}}
-    </li>
+<ng-transclude>
+  <div class="results-list-container">
+    <h1>"{{ctrl.entityName}}"!</h1>
+    <div class="results" 
+      ng-if="ctrl.searchResults.length >= 1">
+      <ul class="result-items">
+      <li
+        class="result"
+        ng-repeat="result in ctrl.searchResults">
+        {{result.name}}
+      </li>
+    </div>
   </div>
-</div>
+</ng-transclude>

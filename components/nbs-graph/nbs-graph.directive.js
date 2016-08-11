@@ -8,6 +8,7 @@ angular.module('nbsGraph', [])
 
     return {
       restrict: 'E',
+      transclude: true,
       templateUrl: 'components/nbs-graph//nbs-graph.html',
       scope: {
         entityName: '=',
