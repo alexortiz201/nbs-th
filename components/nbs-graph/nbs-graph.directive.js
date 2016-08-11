@@ -1,15 +1,11 @@
 angular.module('nbsGraph', [])
   .directive('nbsGraph', function () {
-    class NbsGraphComponent {
-      constructor($scope) {
-        console.log('nbsGraph loaded');
-      }
-    }
+    class NbsGraphComponent {}
 
     return {
       restrict: 'E',
       transclude: true,
-      templateUrl: 'components/nbs-graph//nbs-graph.html',
+      templateUrl: 'components/nbs-graph/nbs-graph.html',
       scope: {
         entityName: '=',
         searchResults: '='

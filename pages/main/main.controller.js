@@ -1,7 +1,8 @@
 angular.module('main', [
   'apiService',
   'nbsSearch',
-  'nbsGraph'
+  'nbsGraph',
+  'nbsBarGraph'
 ])
 .value('accessToken', (function () {
   // put here for ease of use,
