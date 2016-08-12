@@ -25,6 +25,11 @@ angular.module('nbsBarGraph', [])
         });
       }
 
+      /**
+       * clears and then draws the bar graphs
+       * @param  {object} opts  contains label, value, id
+       * @return {noOp}
+       */
       drawGraph(opts) {
         this.barGraphD3.selectAll('*').remove();
         this.barGraphD3.append('h2').text(() => `${opts.label}`).attr('class', 'nbs-bar-graph-label')

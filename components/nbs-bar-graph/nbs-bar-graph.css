@@ -3,23 +3,21 @@
 }
 
 .nbs-bar-graph {
-    background: #eee;
-    padding: 3px;
+  padding: 3px;
 }
 
 .nbs-bar-graph .bar {
   width: 0;
-  transition: all 1s ease-out;
-  -moz-transition: all 1s ease-out;
-  -webkit-transition: all 1s ease-out;
-}
-
-.nbs-bar-graph .bar {
-  font: 10px sans-serif;
-  background-color: steelblue;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background: #BADA55;
   text-align: right;
   padding: 3px;
   margin: 5px;
-  color: white;
-  box-shadow: 2px 2px 2px #666;
+  box-shadow: 2px 2px 2px #333;
+
+  transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
 }

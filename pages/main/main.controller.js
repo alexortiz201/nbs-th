@@ -10,8 +10,7 @@ angular.module('main', [
   return (window.nbsConfig && nbsConfig.token) ?
     nbsConfig.token : '';
 }()))
-.controller('MainController', function(accessToken,apiService) {
-  // defaults
+.controller('MainController', function (accessToken,apiService) {
   let main = this;
 
   function search(searchString) {
@@ -25,12 +24,13 @@ angular.module('main', [
       .fetchEntitiesByName(searchString)
       .then(({data}) => {
         console.log(data);
-        // Stash artist array
-        // also pick first from array for now
+        // Stash result array
         main.searchResults = (data && data.artists) ?
           data.artists : [];
 
-        if (main.searchResults[0]) {
+        // pick first from array for now, using stage for analytics
+        // not all artists return stage
+        if (main.searchResults[0] && main.searchResults[0]['stage']) {
           let dataObj = main.searchResults[0]['stage']['benchmarks'];
 
           // normalize data, which needs to be an array
@@ -51,10 +51,13 @@ angular.module('main', [
       .catch(err => console.log(err));
   }
 
-  main.artistName = '';
+  // defaults
+  main.artistName = 'kid cudi';
   main.search = search;
   main.searchResults = [];
   main.data = [];
 
   apiService.setToken(accessToken);
+
+  search('kid cudi');
 });

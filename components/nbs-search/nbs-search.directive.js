@@ -1,7 +1,7 @@
 angular.module('nbsSearch', [])
   .directive('nbsSearch', function () {
     /**
-     * The reason this has entityNameDud is to 
+     * The reason this has entityNameDud is to
      * workaround the input's instantaneous update.
      */
     class NbsSearchComponent {
@@ -19,6 +19,10 @@ angular.module('nbsSearch', [])
       },
       controller: NbsSearchComponent,
       bindToController: true,
-      controllerAs: 'ctrl'
+      controllerAs: 'ctrl',
+      link: function (scope) {
+        // allows population of input with current default
+        scope.ctrl.entityNameDud = scope.ctrl.entityName;
+      }
     };
   });

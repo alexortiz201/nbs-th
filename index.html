@@ -1,24 +1,11 @@
 <!doctype html>
 <html>
   <head>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <!-- need to compile together to allow d3 with transitions -->
-    <!-- <script src="node_modules/d3/build/d3.min.js"></script>
-    <script src="node_modules/d3-transition/build/d3-transition.js"></script> -->
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="config.js"></script>
-    <script src="common/services/api.service.js"></script>
-
     <!-- styles -->
+    <link href="pages/main/main.css" rel="stylesheet">
     <link href="components/nbs-bar-graph/nbs-bar-graph.css" rel="stylesheet">
-
-    <!-- components -->
-    <script src="components/nbs-search/nbs-search.directive.js"></script>
-    <script src="components/nbs-graph/nbs-graph.directive.js"></script>
-    <script src="components/nbs-bar-graph/nbs-bar-graph.directive.js"></script>
-    <script src="pages/main/main.controller.js"></script>
   </head>
-  <body ng-app="main">
+  <body ng-app="main" ng-cloak>
     <main
       class="main"
       ng-controller="MainController as main">
@@ -37,5 +24,21 @@
             ></nbs-bar-graph>
       </nbs-graph>
     </div>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <!--
+      // need to compile together to allow d3 with transitions
+      <script src="node_modules/d3/build/d3.min.js"></script>
+      <script src="node_modules/d3-transition/build/d3-transition.js"></script>
+    -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="config.js"></script>
+    <script src="common/services/api.service.js"></script>
+
+    <!-- components -->
+    <script src="components/nbs-search/nbs-search.directive.js"></script>
+    <script src="components/nbs-graph/nbs-graph.directive.js"></script>
+    <script src="components/nbs-bar-graph/nbs-bar-graph.directive.js"></script>
+    <script src="pages/main/main.controller.js"></script>
   </body>
 </html>
