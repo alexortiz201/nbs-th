@@ -23,7 +23,6 @@ angular.module('main', [
     apiService
       .fetchEntitiesByName(searchString)
       .then(({data}) => {
-        console.log(data);
         // Stash result array
         main.searchResults = (data && data.artists) ?
           data.artists : [];

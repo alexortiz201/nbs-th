@@ -37,7 +37,7 @@ angular.module('nbsBarGraph', [])
          .data(opts.data).enter().append('div').attr('class', 'bar')
         .transition().ease('elastic')
          .style('width', d => `${d.value}%`)
-         .text(d => `${d.label}`);
+         .text(d => `${d.label}: avg ${(d.value).toFixed(0)}`);
       }
     }
 
