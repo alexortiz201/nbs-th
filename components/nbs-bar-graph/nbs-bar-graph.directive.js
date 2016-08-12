@@ -2,18 +2,28 @@ angular.module('nbsBarGraph', [])
   .directive('nbsBarGraph', function () {
     class NbsBarGraphComponent {
       constructor($scope) {
+        let currLabel = '';
         let barGraph = document.getElementsByClassName('nbs-bar-graph')[0];
         this.barGraphD3 = d3.select(barGraph);
 
         /**
-         * Ideally this watcher is debounced,
-         * or don't watch just trigger on click
+         * label is being changed only when search is clicked
          */
-        $scope.$watch(() => this.label, (newVal) => {
-          this.drawGraph({ label: this.label, data: this.data });
+        $scope.$watch(() => this.data, () => {
+          if (!this.data ||
+              !this.data.length ||
+              this.label === currLabel) {
+            return;
+          }
+
+          currLabel = this.label;
+
+          this.drawGraph({
+            label: this.label,
+            data: this.data
+          });
         });
       }
-
 
       drawGraph(opts) {
         this.barGraphD3.selectAll('*').remove();
@@ -21,8 +31,8 @@ angular.module('nbsBarGraph', [])
          .selectAll('div')
          .data(opts.data).enter().append('div').attr('class', 'bar')
         .transition().ease('elastic')
-         .style('width', d => `${d}%`)
-         .text(d => `${d}%`);
+         .style('width', d => `${d.value}%`)
+         .text(d => `${d.label}`);
       }
     }
 
@@ -36,16 +46,5 @@ angular.module('nbsBarGraph', [])
       controller: NbsBarGraphComponent,
       bindToController: true,
       controllerAs: 'ctrl'
-      // ,
-      // link: function (scope) {
-      //   let self = scope.ctrl;
-      //   let {label, data} = self;
-      //   let opts = {
-      //     label,
-      //     data
-      //   }
-
-      //   self.drawGraph(opts);
-      // }
     };
   });

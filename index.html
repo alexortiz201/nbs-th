@@ -24,7 +24,7 @@
       ng-controller="MainController as main">
       <nbs-search
         entity-name="main.artistName"
-        search-fn="main.search(main.artistName)"
+        search-fn="main.search(artistName)"
         ></nbs-search>
 
       <!-- Insert graph component into nbs-graph -->
@@ -33,9 +33,9 @@
         search-results="main.searchResults">
           <nbs-bar-graph
             label="main.artistName"
-            data="[10,20,30,40,60, 80, 20, 50]"
+            data="main.data"
             ></nbs-bar-graph>
-        </nbs-graph>
+      </nbs-graph>
     </div>
   </body>
 </html>

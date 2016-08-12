@@ -3,8 +3,7 @@
   <input
     type="text"
     ng-model="ctrl.entityNameDud"
-    ng-model-options="{ updateOn: 'blur' }"
     placeholder="Enter a name here" />
-  <button ng-click="ctrl.searchClicked()">Search</button>
+  <button ng-click="ctrl.searchFn({artistName : ctrl.entityNameDud})">Search</button>
   <hr>
 </div>
